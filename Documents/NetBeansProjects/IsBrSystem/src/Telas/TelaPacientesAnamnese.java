@@ -73,7 +73,7 @@ public class TelaPacientesAnamnese extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) TabelaClassificacao.getModel();
         model.setNumRows(0);
         String sql = "Select NomePaciente,FrequenciaCardiaca,FrequenciaRespiratoria,Temperatura,Hgt,Saturacao,PressaoArterial,ClassificacaoClinica,QueixaPrincipal,Prontuario from tb_classificacao WHERE tb_classificacao.NomePaciente "
-                + " not in (SELECT tb_agenda.NomePaciente FROM tb_agenda WHERE Estagio <> 'Medico' ) order by tb_classificacao.ClassificacaoClinica desc"
+                + " not in (SELECT tb_agenda.NomePaciente FROM tb_agenda WHERE Estagio <> 'Medico' ) order by tb_classificacao.codigo desc LIMIT 1 ;"
                 + "";
         try {
             pst = Conexao.conector().prepareStatement(sql);
