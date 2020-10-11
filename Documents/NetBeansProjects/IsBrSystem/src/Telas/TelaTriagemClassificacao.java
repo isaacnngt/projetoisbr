@@ -861,26 +861,31 @@ public class TelaTriagemClassificacao extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Classificação Clínica", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
+        azul.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(azul);
         azul.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         azul.setForeground(new java.awt.Color(51, 102, 255));
         azul.setText("Azul - Não Urgente");
 
+        verde.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(verde);
         verde.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         verde.setForeground(new java.awt.Color(0, 153, 0));
         verde.setText("Verde - Pouco Urgente");
 
+        vermelho.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(vermelho);
         vermelho.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         vermelho.setForeground(new java.awt.Color(255, 0, 0));
         vermelho.setText("Vermelho - Emergência");
 
+        amarelo.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(amarelo);
         amarelo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         amarelo.setForeground(new java.awt.Color(255, 255, 0));
         amarelo.setText("Amarelo - Urgente");
 
+        laranja.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(laranja);
         laranja.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         laranja.setForeground(new java.awt.Color(255, 204, 0));
@@ -918,10 +923,11 @@ public class TelaTriagemClassificacao extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 1030, 70));
 
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         labelUsuario.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelUsuario.setForeground(new java.awt.Color(51, 51, 51));
+        labelUsuario.setForeground(new java.awt.Color(255, 255, 255));
         labelUsuario.setText("Usuário: ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

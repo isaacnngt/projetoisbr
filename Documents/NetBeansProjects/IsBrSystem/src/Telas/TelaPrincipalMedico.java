@@ -145,7 +145,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jMenuReceituarios1.setBackground(new java.awt.Color(255, 255, 255));
-        jMenuReceituarios1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuReceituarios1.setBorder(null);
         jMenuReceituarios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Archive_24x24.png"))); // NOI18N
         jMenuReceituarios1.setText("Acesso Rápido");
         jMenuReceituarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -170,7 +170,7 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         jMenuBar1.add(jMenuReceituarios1);
 
         jMenuSobre1.setBackground(new java.awt.Color(255, 255, 255));
-        jMenuSobre1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuSobre1.setBorder(null);
         jMenuSobre1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/home.png"))); // NOI18N
         jMenuSobre1.setText("Sair");
         jMenuSobre1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
