@@ -38,7 +38,6 @@ public class TelaLaudos extends javax.swing.JFrame {
         txtConclusaoLaudo.setWrapStyleWord(true);
         txtObservacaoLaudo.setLineWrap(true);
         txtConclusaoLaudo.setWrapStyleWord(true);
-        listarLaudo();
         //txtCodigo.setVisible(false);
         setIcon();
         desaabilitaCampos();
@@ -65,7 +64,6 @@ public class TelaLaudos extends javax.swing.JFrame {
         txtNomeMedico.setEnabled(false);
         btnPesquisar.setEnabled(true);
         btnPesquisarMedico.setEnabled(true);
-        tblLaudo.setEnabled(true);
         txtDataCadastro.setEnabled(true);
     }
 
@@ -80,7 +78,6 @@ public class TelaLaudos extends javax.swing.JFrame {
         txtNomeMedico.setEnabled(false);
         btnPesquisar.setEnabled(false);
         btnPesquisarMedico.setEnabled(false);
-        tblLaudo.setEnabled(false);
         txtDataCadastro.setEnabled(false);
     }
 
@@ -138,7 +135,7 @@ public class TelaLaudos extends javax.swing.JFrame {
 
     public void listarNomePaciente() {
         Conexao conec = new Conexao();
-        String sql = "Select NomePaciente from tb_agenda  where Status = 'Inativo' order by codigo Asc";
+        String sql = "Select NomePaciente from tb_agenda  where Status = 'Inativo' and Estagio = 'Medico' order by codigo Asc";
         try {
             pst = conexao.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -156,7 +153,7 @@ public class TelaLaudos extends javax.swing.JFrame {
         }
     }
 
-    public void listarLaudo() {
+   /* public void listarLaudo() {
         Conexao conec = new Conexao();
         DefaultTableModel model = (DefaultTableModel) tblLaudo.getModel();
         model.setNumRows(0);
@@ -186,7 +183,7 @@ public class TelaLaudos extends javax.swing.JFrame {
             }
         }
 
-    }
+    }*/
 
     public void cadastrarLaudo() {
         Conexao conec = new Conexao();
@@ -203,7 +200,7 @@ public class TelaLaudos extends javax.swing.JFrame {
             pst.setString(7, txtConclusaoLaudo.getText());
             pst.execute();
             JOptionPane.showMessageDialog(rootPane, " Laudo de " + txtNomePaciente.getText().toUpperCase() + " salvo com sucesso.", "Inclusão", JOptionPane.PLAIN_MESSAGE);
-            listarLaudo();
+            //listarLaudo();
 
         } catch (SQLException error) {
             JOptionPane.showMessageDialog(null, error);
@@ -236,7 +233,6 @@ public class TelaLaudos extends javax.swing.JFrame {
             } catch (Exception ex) {
             }
         }
-        listarLaudo();
     }
 
     private void editarLaudo() {
@@ -265,10 +261,9 @@ public class TelaLaudos extends javax.swing.JFrame {
             } catch (Exception ex) {
             }
         }
-        listarLaudo();
     }
 
-    public void mostraItens() {
+  /*  public void mostraItens() {
         int seleciona = tblLaudo.getSelectedRow();
         txtCodigo.setText(tblLaudo.getModel().getValueAt(seleciona, 0).toString());
         txtNomePaciente.setText(tblLaudo.getModel().getValueAt(seleciona, 1).toString());
@@ -278,7 +273,7 @@ public class TelaLaudos extends javax.swing.JFrame {
         txtTipoExame.setText(tblLaudo.getModel().getValueAt(seleciona, 5).toString());
         txtObservacaoLaudo.setText(tblLaudo.getModel().getValueAt(seleciona, 6).toString());
         txtConclusaoLaudo.setText(tblLaudo.getModel().getValueAt(seleciona, 7).toString());
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -310,8 +305,6 @@ public class TelaLaudos extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         btnNovo = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
-        btnExcluir = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtNomePaciente = new javax.swing.JTextField();
         btnPesquisar = new javax.swing.JButton();
@@ -323,9 +316,6 @@ public class TelaLaudos extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         txtDataCadastro = new org.jdesktop.swingx.JXDatePicker();
         jLabel6 = new javax.swing.JLabel();
-        jXTitledPanel1 = new org.jdesktop.swingx.JXTitledPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblLaudo = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
 
         LUPA_NOME_PACIENTE.setModal(true);
@@ -488,7 +478,7 @@ public class TelaLaudos extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -522,28 +512,6 @@ public class TelaLaudos extends javax.swing.JFrame {
             }
         });
 
-        btnExcluir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnExcluir.setForeground(new java.awt.Color(51, 51, 51));
-        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensTelas/excluir.png"))); // NOI18N
-        btnExcluir.setText("EXCLUIR");
-        btnExcluir.setEnabled(false);
-        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirActionPerformed(evt);
-            }
-        });
-
-        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnEditar.setForeground(new java.awt.Color(51, 51, 51));
-        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensTelas/Editar.png"))); // NOI18N
-        btnEditar.setText("EDITAR");
-        btnEditar.setEnabled(false);
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -552,20 +520,14 @@ public class TelaLaudos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(433, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
@@ -626,62 +588,6 @@ public class TelaLaudos extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Código");
 
-        jXTitledPanel1.setTitle("SELECIONE ABAIXO O PACIENTE QUE DESEJA IMPRIMIR");
-        jXTitledPanel1.setTitleFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        tblLaudo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        tblLaudo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Codigo", "Nome Paciente", "Nome Médico", "Data Atendimento", "Título do atendimento", "Tipo de Exame", "Observação do Laudo", "Conclusão do Laudo"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblLaudo.setEnabled(false);
-        tblLaudo.setRowHeight(28);
-        tblLaudo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblLaudoMouseClicked(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                tblLaudoMouseReleased(evt);
-            }
-        });
-        tblLaudo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                tblLaudoKeyReleased(evt);
-            }
-        });
-        jScrollPane3.setViewportView(tblLaudo);
-        if (tblLaudo.getColumnModel().getColumnCount() > 0) {
-            tblLaudo.getColumnModel().getColumn(0).setMinWidth(50);
-            tblLaudo.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tblLaudo.getColumnModel().getColumn(0).setMaxWidth(50);
-            tblLaudo.getColumnModel().getColumn(3).setMinWidth(80);
-            tblLaudo.getColumnModel().getColumn(3).setPreferredWidth(80);
-            tblLaudo.getColumnModel().getColumn(3).setMaxWidth(80);
-        }
-
-        javax.swing.GroupLayout jXTitledPanel1Layout = new javax.swing.GroupLayout(jXTitledPanel1.getContentContainer());
-        jXTitledPanel1.getContentContainer().setLayout(jXTitledPanel1Layout);
-        jXTitledPanel1Layout.setHorizontalGroup(
-            jXTitledPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3)
-        );
-        jXTitledPanel1Layout.setVerticalGroup(
-            jXTitledPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-        );
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Data Atendimento:");
 
@@ -734,9 +640,7 @@ public class TelaLaudos extends javax.swing.JFrame {
                                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(6, 6, 6))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jXTitledPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -774,9 +678,7 @@ public class TelaLaudos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTitledPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -798,8 +700,6 @@ public class TelaLaudos extends javax.swing.JFrame {
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         txtNomePaciente.requestFocus();
-        btnEditar.setEnabled(false);
-        btnExcluir.setEnabled(false);
         btnSalvar.setEnabled(true);
         habilitaCampos();
         letrasemNegrito();
@@ -853,36 +753,6 @@ public class TelaLaudos extends javax.swing.JFrame {
         btnNovo.setEnabled(true);
     }//GEN-LAST:event_btnSalvarActionPerformed
 
-    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-
-        int i = tblLaudo.getSelectedRow();
-        if (i < 0) {
-            Msg.alerta(this, "Selecione um Registro!");
-            return;
-        }
-        deletarlaudo();
-        desaabilitaCampos();
-        limparCampos();
-        btnNovo.setEnabled(true);
-        btnEditar.setEnabled(false);
-        btnExcluir.setEnabled(false);
-    }//GEN-LAST:event_btnExcluirActionPerformed
-
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
-        int i = tblLaudo.getSelectedRow();
-        if (i < 0) {
-            Msg.alerta(this, "Selecione um Registro!");
-            return;
-        }
-        editarLaudo();
-        desaabilitaCampos();
-        limparCampos();
-        btnNovo.setEnabled(true);
-        btnEditar.setEnabled(false);
-        btnExcluir.setEnabled(false);
-    }//GEN-LAST:event_btnEditarActionPerformed
-
     private void TabelaNomePacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaNomePacienteMouseClicked
         // seleciona a linha da tabela e seta nos campos
         int linha = TabelaNomePaciente.getSelectedRow();
@@ -921,24 +791,6 @@ public class TelaLaudos extends javax.swing.JFrame {
     private void txtNomePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePacienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomePacienteActionPerformed
-
-    private void tblLaudoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaudoMouseClicked
-        mostraItens();
-        habilitaCampos();
-        btnEditar.setEnabled(true);
-        btnExcluir.setEnabled(true);
-        btnNovo.setEnabled(false);
-        btnSalvar.setEnabled(false);
-
-    }//GEN-LAST:event_tblLaudoMouseClicked
-
-    private void tblLaudoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaudoMouseReleased
-
-    }//GEN-LAST:event_tblLaudoMouseReleased
-
-    private void tblLaudoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblLaudoKeyReleased
-        mostraItens();
-    }//GEN-LAST:event_tblLaudoKeyReleased
 
     /**
      * @param args the command line arguments
@@ -980,8 +832,6 @@ public class TelaLaudos extends javax.swing.JFrame {
     private javax.swing.JDialog LUPA_NOME_PACIENTE;
     private javax.swing.JTable TabelaNomeMedico;
     private javax.swing.JTable TabelaNomePaciente;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnPesquisarMedico;
@@ -1001,11 +851,8 @@ public class TelaLaudos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private org.jdesktop.swingx.JXTitledPanel jXTitledPanel1;
-    private javax.swing.JTable tblLaudo;
     public javax.swing.JTextField txtCodigo;
     public javax.swing.JTextArea txtConclusaoLaudo;
     public org.jdesktop.swingx.JXDatePicker txtDataCadastro;

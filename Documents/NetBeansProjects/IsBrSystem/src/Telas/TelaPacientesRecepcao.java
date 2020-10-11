@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Telas;
 
 import Controle.Conexao;
@@ -316,7 +311,7 @@ public class TelaPacientesRecepcao extends javax.swing.JFrame {
 
     public void cadastrarPacientes() {
         Conexao conec = new Conexao();
-        String sql = "Insert into tb_agenda(DataCadastro,TipoConvenio,documentoPaciente,NomePaciente,CepPaciente,EnderecoPaciente,Bairro,CidadePaciente,UfPaciente,dataNascimento,TelefoneCelular,TipoAtendimento,foto,Status,Idade,Sexo,Peso,Altura,CartaoSus,Prontuario,tipoSanguineo) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "Insert into tb_agenda(DataCadastro,TipoConvenio,documentoPaciente,NomePaciente,CepPaciente,EnderecoPaciente,Bairro,CidadePaciente,UfPaciente,dataNascimento,TelefoneCelular,TipoAtendimento,foto,Status,Idade,Sexo,Peso,Altura,CartaoSus,Prontuario,tipoSanguineo,Estagio) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'Triagem')";
 
         try {
             pst = Conexao.conector().prepareStatement(sql);

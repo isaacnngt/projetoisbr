@@ -72,23 +72,19 @@ public class TelaPacientesMedico extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) tabela.getModel();//pegamos o model da tabela
             model.setNumRows(0);//limpamos caso tenha algum registro
 
-            String sql = "SELECT * FROM tb_anamnese WHERE tb_anamnese.NomePaciente = '" + nomePaciente + "';";
+            String sql = "SELECT * FROM tblaudo WHERE tblaudo.NomePaciente = '" + nomePaciente + "';";
             System.out.println(sql);
             pst = Conexao.conector().prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
                 //adiciona linha na tabela
                 model.addRow(new Object[]{
-                    Utilitarios.Utils.convertData(rs.getDate("Data")),
-                    rs.getString("HistoricoClinico"),
-                    rs.getString("CondutaMedica"),
-                    rs.getString("Medicacao"),
-                    rs.getString("FrequenciaCardiaca"),
-                    rs.getString("FrequenciaRespiratoria"),
-                    rs.getString("Hgt"),
-                    rs.getString("PressaoArterial"),
-                    rs.getString("Temperatura"),
-                    rs.getString("Saturacao"),});
+                    Utilitarios.Utils.convertData(rs.getDate("DataLaudo")),
+                    rs.getString("TituloLaudo"),
+                    rs.getString("NomeMedico"),
+                    rs.getString("TipoExame"),
+                    rs.getString("ObsLaudo"),
+                    rs.getString("ConclusaoLaudo"),});
             }
 
         } catch (Exception e) {
@@ -1051,11 +1047,11 @@ public class TelaPacientesMedico extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Data", "Histórico", "Conduta", "Medicação", "Frequência Cardíaca", "Frequência Respiratória", "HGT", "Pressão Arterial", "Temperatura", "Saturação"
+                "Data", "Titulo", "Nome do Médico", "Exame", "Observação", "Conclusão"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, true, false, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1063,20 +1059,21 @@ public class TelaPacientesMedico extends javax.swing.JFrame {
             }
         });
         tabela.setRowHeight(28);
+        tabela.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tabelaAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         tabela.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelaMouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(tabela);
-        if (tabela.getColumnModel().getColumnCount() > 0) {
-            tabela.getColumnModel().getColumn(6).setMinWidth(60);
-            tabela.getColumnModel().getColumn(6).setPreferredWidth(60);
-            tabela.getColumnModel().getColumn(6).setMaxWidth(60);
-            tabela.getColumnModel().getColumn(9).setMinWidth(100);
-            tabela.getColumnModel().getColumn(9).setPreferredWidth(100);
-            tabela.getColumnModel().getColumn(9).setMaxWidth(100);
-        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1276,6 +1273,10 @@ public class TelaPacientesMedico extends javax.swing.JFrame {
     private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
 
     }//GEN-LAST:event_tabelaMouseClicked
+
+    private void tabelaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabelaAncestorAdded
+       
+    }//GEN-LAST:event_tabelaAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -1488,7 +1489,7 @@ public class TelaPacientesMedico extends javax.swing.JFrame {
     }
 
     public void populaJComboBoxConvenio() {
-        String sql = "Select *from tb_convenios";
+        String sql = "Select * from tb_convenios";
         try {
             pst = Conexao.conector().prepareStatement(sql);
             rs = pst.executeQuery();

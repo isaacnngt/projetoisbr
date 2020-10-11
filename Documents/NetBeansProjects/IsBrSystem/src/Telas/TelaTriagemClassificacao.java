@@ -155,7 +155,7 @@ public class TelaTriagemClassificacao extends javax.swing.JFrame {
 
     public void listarNomePaciente() {
         Conexao conec = new Conexao();
-        String sql = "Select NomePaciente from tb_agenda where Status = 'Ativo' order by codigo Asc";
+        String sql = "Select NomePaciente from tb_agenda where Status = 'Ativo' and Estagio = 'Triagem' order by codigo Asc";
         try {
             pst = conexao.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -195,7 +195,7 @@ public class TelaTriagemClassificacao extends javax.swing.JFrame {
         }
 
        String sql = "Insert into tb_classificacao(Data,HorarioClassificacao,NomePaciente,QueixaPrincipal,Observacao,FrequenciaCardiaca,FrequenciaRespiratoria,Hgt,PressaoArterial,Temperatura,Saturacao,ClassificacaoClinica,Prontuario)values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
+       
         try {
             pst = Conexao.conector().prepareStatement(sql);
 
@@ -218,7 +218,7 @@ public class TelaTriagemClassificacao extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, error);
         }
     }
-
+        
     private boolean verificaSalvar() {
         boolean valor = false;
         String mensagem = "Campos Obrigatórios!\n";

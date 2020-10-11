@@ -67,7 +67,7 @@ public class TelaPacientesClassificacao extends javax.swing.JFrame {
     public void listarPacientesClassificacao() {
         DefaultTableModel model = (DefaultTableModel) TabelaClassificacao.getModel();
         model.setNumRows(0);
-        String sql = "Select DataCadastro,NomePaciente,TipoAtendimento,Prontuario from tb_agenda where Status = 'Ativo'";
+        String sql = "Select DataCadastro,NomePaciente,TipoAtendimento,Prontuario from tb_agenda where Status = 'Ativo' and Estagio = 'Triagem'";
                 /*+ " WHERE tb_agenda.NomePaciente "
                 + " not in (SELECT tb_classificacao.NomePaciente FROM tb_classificacao WHERE tb_classificacao.`Data`=NOW()) "
                 + " and tb_agenda.DataCadastro=now()"
