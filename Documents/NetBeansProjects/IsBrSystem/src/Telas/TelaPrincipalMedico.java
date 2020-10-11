@@ -64,6 +64,8 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuReceituarios1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuSobre1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -159,13 +161,31 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         });
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        jMenuItem1.setText("Atendimento dos Pacientes");
+        jMenuItem1.setText("Visulizar Pacientes para atendimentos");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         jMenuReceituarios1.add(jMenuItem1);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        jMenuItem3.setText("Atendimento do Paciente");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenuReceituarios1.add(jMenuItem3);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
+        jMenuItem4.setText("Dados do Paciente");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenuReceituarios1.add(jMenuItem4);
 
         jMenuBar1.add(jMenuReceituarios1);
 
@@ -233,6 +253,18 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuReceituarios1ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        TelaLaudos tela = new TelaLaudos();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        TelaPacientesMedico tela = new TelaPacientesMedico();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -294,6 +326,8 @@ public class TelaPrincipalMedico extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenu jMenuReceituarios1;
     private javax.swing.JMenu jMenuSobre1;
     private javax.swing.JPanel jPanel1;

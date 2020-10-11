@@ -259,7 +259,7 @@ public class TelaPacientesAnamnese extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSair1ActionPerformed
 
     private void TabelaClassificacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaClassificacaoMouseClicked
-        TelaPacientesMedico tela = new TelaPacientesMedico();
+        TelaLaudos tela = new TelaLaudos();
         tela.setVisible(true);
         dispose();
        
