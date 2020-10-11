@@ -90,7 +90,7 @@ public class TelaPrincipalRecepcao extends javax.swing.JFrame {
         jMenuBar1.setPreferredSize(new java.awt.Dimension(653, 40));
 
         jMenucadastros.setBackground(new java.awt.Color(255, 255, 255));
-        jMenucadastros.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenucadastros.setBorder(null);
         jMenucadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/img_usuario.png"))); // NOI18N
         jMenucadastros.setText("Cadastros");
         jMenucadastros.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -141,7 +141,7 @@ public class TelaPrincipalRecepcao extends javax.swing.JFrame {
         jMenuBar1.add(jMenucadastros);
 
         jMenuSobre1.setBackground(new java.awt.Color(255, 255, 255));
-        jMenuSobre1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuSobre1.setBorder(null);
         jMenuSobre1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/home.png"))); // NOI18N
         jMenuSobre1.setText("Sair");
         jMenuSobre1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

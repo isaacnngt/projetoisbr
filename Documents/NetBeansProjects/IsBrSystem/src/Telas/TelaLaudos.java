@@ -692,8 +692,10 @@ public class TelaLaudos extends javax.swing.JFrame {
     private void btnSair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSair1ActionPerformed
 
         //Pergunta se o usuário deseja realmente sair do sistema
-        int sair = JOptionPane.showConfirmDialog(null, "DESEJA SAIR DA TELA LAUDO?", "ATENÇÃO", JOptionPane.YES_NO_OPTION);
+        int sair = JOptionPane.showConfirmDialog(null, "DESEJA SAIR DA TELA DE ATENDIMENTO?", "ATENÇÃO", JOptionPane.YES_NO_OPTION);
         if (sair == JOptionPane.YES_OPTION) {
+            TelaPrincipalMedico tela = new TelaPrincipalMedico();
+            tela.setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnSair1ActionPerformed
