@@ -116,7 +116,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Sys Consult&#xf3;rio V - 01"/>
+    <Property name="title" type="java.lang.String" value="isBR - SISTEMA HOSPITALAR | Consult&#xf3;rio"/>
     <Property name="extendedState" type="int" value="6"/>
   </Properties>
   <SyntheticProperties>

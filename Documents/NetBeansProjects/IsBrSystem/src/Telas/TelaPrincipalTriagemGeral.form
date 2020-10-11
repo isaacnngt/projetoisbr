@@ -142,7 +142,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Sys Hospital"/>
+    <Property name="title" type="java.lang.String" value="isBR - SISTEMA HOSPITALAR "/>
     <Property name="extendedState" type="int" value="6"/>
   </Properties>
   <SyntheticProperties>

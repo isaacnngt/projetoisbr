@@ -154,7 +154,7 @@ public class Loginn extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sys - Hospital - V 01");
+        setTitle("isBR - SISTEMA HOSPITALAR");
         setExtendedState(6);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

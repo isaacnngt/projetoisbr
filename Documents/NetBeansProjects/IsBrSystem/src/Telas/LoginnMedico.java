@@ -149,7 +149,7 @@ public class LoginnMedico extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Login Médico");
+        setTitle("isBR - SISTEMA HOSPITALAR | Login Médico");
         setExtendedState(6);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

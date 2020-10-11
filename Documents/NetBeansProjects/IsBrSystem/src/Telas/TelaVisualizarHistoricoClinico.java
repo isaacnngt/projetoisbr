@@ -85,7 +85,7 @@ public class TelaVisualizarHistoricoClinico extends javax.swing.JFrame {
         TabelaVisualizarHistoricoClinico = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Visualizar Histórico Clínico");
+        setTitle("isBR - SISTEMA HOSPITALAR | Visualizar Histórico Clínico");
         setExtendedState(MAXIMIZED_BOTH);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

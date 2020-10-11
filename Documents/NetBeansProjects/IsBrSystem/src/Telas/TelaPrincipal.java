@@ -70,7 +70,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sys - Hospital");
+        setTitle("isBR - SISTEMA HOSPITALAR ");
         setExtendedState(6);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -121,7 +121,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         adminbtn4.setBackground(new java.awt.Color(0, 0, 0));
         adminbtn4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         adminbtn4.setForeground(new java.awt.Color(255, 255, 255));
-        adminbtn4.setText("ENFERMAGEM");
+        adminbtn4.setText("TRIAGEM");
         adminbtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminbtn4ActionPerformed(evt);

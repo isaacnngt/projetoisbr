@@ -74,7 +74,7 @@ public class TelaPrincipalTriagemGeral extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sys Hospital");
+        setTitle("isBR - SISTEMA HOSPITALAR ");
         setExtendedState(6);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

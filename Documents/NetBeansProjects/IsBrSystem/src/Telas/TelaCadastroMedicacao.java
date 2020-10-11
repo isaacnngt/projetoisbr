@@ -306,7 +306,7 @@ public class TelaCadastroMedicacao extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro Medicação");
+        setTitle("isBR - SISTEMA HOSPITALAR | Cadastro Medicação");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());

@@ -154,7 +154,7 @@ public class LoginnRecepcao extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Login Recepção");
+        setTitle("isBR - SISTEMA HOSPITALAR | Login Recepção");
         setExtendedState(6);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

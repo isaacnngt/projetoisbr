@@ -102,7 +102,7 @@ public class TelaPacientesClassificacao extends javax.swing.JFrame {
         TabelaClassificacao = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Tela Classificação Pacientes");
+        setTitle("isBR - SISTEMA HOSPITALAR | Tela Classificação Pacientes");
 
         jXTitledPanel1.setTitle("Pacientes para Classificação");
         jXTitledPanel1.setTitleFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N

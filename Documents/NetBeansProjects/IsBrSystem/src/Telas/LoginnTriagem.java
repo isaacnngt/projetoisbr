@@ -153,7 +153,7 @@ public class LoginnTriagem extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Login Enfermagem");
+        setTitle("isBR - SISTEMA HOSPITALAR | Login Triagem");
         setExtendedState(6);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

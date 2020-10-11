@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Telas;
 
 import Utilitarios.BLDatas;
@@ -65,7 +60,7 @@ public class TelaPrincipalRecepcao extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sys Consultório V - 01");
+        setTitle("isBR - SISTEMA HOSPITALAR | Sys Consultório");
         setExtendedState(6);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

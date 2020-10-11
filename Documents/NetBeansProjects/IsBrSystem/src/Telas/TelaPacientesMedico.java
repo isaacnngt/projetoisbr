@@ -463,7 +463,7 @@ public class TelaPacientesMedico extends javax.swing.JFrame {
         txtRegistros = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Pacientes");
+        setTitle("isBR - SISTEMA HOSPITALAR | Cadastro de Pacientes");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(153, 153, 153));

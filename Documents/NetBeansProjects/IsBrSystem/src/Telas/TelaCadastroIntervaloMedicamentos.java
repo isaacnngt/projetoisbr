@@ -225,7 +225,7 @@ public class TelaCadastroIntervaloMedicamentos extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Intervalo de Administração de Medicamentos");
+        setTitle("isBR - SISTEMA HOSPITALAR | Intervalo de Administração de Medicamentos");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
