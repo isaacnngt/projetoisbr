@@ -1573,32 +1573,4 @@ public class TelaPacientesRecepcao extends javax.swing.JFrame {
         int day = var.getYear();
         return new java.sql.Date(day, month, year);
     }
-
-    public List GetDados() {
-
-        List lista = new ArrayList();
-//for (int i = 0; i < 10; i++) {
-        AuxiliarFicha print = new AuxiliarFicha();
-        print.setIdpaciente(txtId.getText());
-        print.setDatacadastro(txtDataCadastro.getEditor().getText());
-        print.setTipoconvenio(JcTipoConvenio.getSelectedItem().toString());
-        print.setDocumentopaciente(txtDocumento.getText());
-        print.setNomepaciente(txtNomePaciente.getText());
-        print.setCeppaciente(txtCep.getText());
-        print.setEnderecopaciente(txtEndereco.getText());
-        print.setBairro(txtbairro.getText());
-        print.setCidadepaciente(txtCidade.getText());
-        print.setUfpaciente(JcUF.getSelectedItem().toString());
-        print.setDatanascimento(txtDataNascimento.getText());
-        print.setTelefonecelular(txtTelefoneCelular.getText());
-        print.setTipoatendimento(txtTipoAtendimento.getSelectedItem().toString());
-        print.setStatus(jCStatus.getSelectedItem().toString());
-        print.setIdade(txtIdade.getText());
-        print.setSexo(jCSexo.getSelectedItem().toString());
-        print.setPeso(txtPeso.getText());
-        print.setAltura(txtAltura.getText());
-        print.setProntuario(txtProntuario.getText());
-        lista.add(print);
-        return lista;
-    }
 }
