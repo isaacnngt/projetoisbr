@@ -7,7 +7,7 @@ package Telas;
 
 /**
  *
- * @author Adriano Zanette
+ * @author Isaac Nunes
  */
  public class Auxiliar {
  private String data;
