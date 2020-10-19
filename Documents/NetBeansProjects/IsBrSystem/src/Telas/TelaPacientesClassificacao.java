@@ -184,9 +184,14 @@ public class TelaPacientesClassificacao extends javax.swing.JFrame {
 
 
     private void TabelaClassificacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaClassificacaoMouseClicked
-        TelaTriagemClassificacao tela = new TelaTriagemClassificacao();
+        /*TelaTriagemClassificacao tela = new TelaTriagemClassificacao();
         tela.setVisible(true);
-        dispose(); 
+        dispose(); */
+        
+        if (evt.getClickCount() == 1) {
+            ChamaDados();
+            
+        }  
     }//GEN-LAST:event_TabelaClassificacaoMouseClicked
 
     private void TabelaClassificacaoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TabelaClassificacaoAncestorAdded
@@ -235,4 +240,29 @@ public class TelaPacientesClassificacao extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
+    // chama dados da tela triagem
+    TelaTriagemClassificacao tela = new TelaTriagemClassificacao();
+    
+  //chamar metodo com os dados
+    private void ChamaDados() {
+        //chama a tela ja com os dados
+        tela = new TelaTriagemClassificacao(this);//o segredo esta aqui
+        int index = TabelaClassificacao.getSelectedRow();
+        TableModel model = TabelaClassificacao.getModel();
+        // String codigo = model.getValueAt(index, 0).toString();
+        String NomePaciente = model.getValueAt(index, 1).toString();
+        String TipoAtendimento = model.getValueAt(index, 2).toString();
+        String Prontuario = model.getValueAt(index, 3).toString();
+
+        tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        tela.txtNomePaciente.setText(NomePaciente);
+        tela.txtTipoAtendimento.setText(TipoAtendimento);
+        tela.txtProntuario.setText(Prontuario);
+        //tela.labelData.setText(Data);
+        tela.setVisible(true);
+        tela.txtHorarioClassificacao.requestFocus();
+        tela.pack();
+
+    }
+    
 }
